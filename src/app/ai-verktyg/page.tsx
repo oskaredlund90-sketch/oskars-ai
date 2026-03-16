@@ -39,28 +39,28 @@ const tools: Tool[] = [
     provider: 'Google',
     icon: <BookOpen className="h-5 w-5" />,
     description:
-      'AI-driven anteckningsbok som grundar sina svar i dina egna uppladdade dokument. Minskar hallucinationer eftersom svaren baseras p\u00e5 k\u00e4llmaterialet.',
+      'AI-driven anteckningsbok som grundar sina svar i dina egna uppladdade dokument. Minskar hallucinationer eftersom svaren baseras på källmaterialet.',
     link: 'https://notebooklm.google.com',
     steps: [
-      'G\u00e5 till notebooklm.google.com',
+      'Gå till notebooklm.google.com',
       'Skapa nytt projekt',
       'Ladda upp dokument (PDF, Google Docs, webbsidor)',
-      'St\u00e4ll fr\u00e5gor \u2013 svaren grundas i dina k\u00e4llor',
-      'Prova \u201cAudio Overview\u201d f\u00f6r att skapa en podcast om inneh\u00e5llet',
+      'Ställ frågor – svaren grundas i dina källor',
+      'Prova “Audio Overview” för att skapa en podcast om innehållet',
     ],
     teacherUse: [
-      'Ladda upp kursplan + centralt inneh\u00e5ll',
-      'Skapa studieguider baserade p\u00e5 l\u00e4romedel',
-      'F\u00f6rbered lektioner genom att fr\u00e5ga om specifika delar',
+      'Ladda upp kursplan + centralt innehåll',
+      'Skapa studieguider baserade på läromedel',
+      'Förbered lektioner genom att fråga om specifika delar',
     ],
     studentUse: [
       'Ladda upp anteckningar och bokkapitel',
-      'St\u00e4ll fr\u00e5gor om materialet',
+      'Ställ frågor om materialet',
       'Skapa sammanfattningar',
     ],
     tips: [
-      'Mindre hallucinationer tack vare k\u00e4llf\u00f6rankring',
-      'Perfekt f\u00f6r studieteknik',
+      'Mindre hallucinationer tack vare källförankring',
+      'Perfekt för studieteknik',
     ],
   },
   {
@@ -69,24 +69,24 @@ const tools: Tool[] = [
     provider: 'Google',
     icon: <Sparkles className="h-5 w-5" />,
     description:
-      'Googles AI-assistent med kraftfulla funktioner som Canvas (interaktiv redigering) och m\u00f6jligheten att skapa presentationer som kan exporteras till Google Slides.',
+      'Googles AI-assistent med kraftfulla funktioner som Canvas (interaktiv redigering) och möjligheten att skapa presentationer som kan exporteras till Google Slides.',
     link: 'https://gemini.google.com',
     steps: [
-      'G\u00e5 till gemini.google.com',
+      'Gå till gemini.google.com',
       'Logga in med ditt Google-konto',
-      'Be Gemini skapa en presentation: \u201cSkapa en presentation om [\u00e4mne] med [antal] slides\u201d',
-      'Klicka \u201cExportera till Google Slides\u201d',
+      'Be Gemini skapa en presentation: “Skapa en presentation om [ämne] med [antal] slides”',
+      'Klicka “Exportera till Google Slides”',
       'Redigera i Google Slides efter behov',
     ],
     teacherUse: [
       'Skapa presentationer snabbt',
-      'Anv\u00e4nd Canvas f\u00f6r interaktiv textredigering',
+      'Använd Canvas för interaktiv textredigering',
       'Generera bildmaterial',
     ],
     tips: [
-      'Canvas-funktionen l\u00e5ter dig redigera AI-genererad text inline',
-      'Exportera presentationer imponerar p\u00e5 kollegor',
-      'Bra f\u00f6r att snabbt skapa visuellt material',
+      'Canvas-funktionen låter dig redigera AI-genererad text inline',
+      'Exportera presentationer imponerar på kollegor',
+      'Bra för att snabbt skapa visuellt material',
     ],
   },
   {
@@ -95,24 +95,24 @@ const tools: Tool[] = [
     provider: 'Canva',
     icon: <Palette className="h-5 w-5" />,
     description:
-      'Designverktyg med kraftfulla AI-funktioner. Magic Design skapar presentationer och grafik automatiskt, och AI-bildgenerering g\u00f6r det enkelt att skapa visuellt material.',
+      'Designverktyg med kraftfulla AI-funktioner. Magic Design skapar presentationer och grafik automatiskt, och AI-bildgenerering gör det enkelt att skapa visuellt material.',
     link: 'https://www.canva.com',
     steps: [
-      'Skapa konto p\u00e5 canva.com (gratis f\u00f6r l\u00e4rare via Canva for Education)',
-      'V\u00e4lj mall eller starta med Magic Design',
-      'Beskriv vad du vill skapa \u2013 AI genererar f\u00f6rslag',
+      'Skapa konto på canva.com (gratis för lärare via Canva for Education)',
+      'Välj mall eller starta med Magic Design',
+      'Beskriv vad du vill skapa – AI genererar förslag',
       'Redigera och anpassa efter behov',
       'Ladda ner eller dela direkt',
     ],
     teacherUse: [
       'Skapa snygga presentationer och arbetsblad',
-      'AI-genererade bilder f\u00f6r undervisning',
-      'Mallar anpassade f\u00f6r skolan',
+      'AI-genererade bilder för undervisning',
+      'Mallar anpassade för skolan',
     ],
     tips: [
       'Canva for Education ger gratis premium-funktioner',
       'Magic Design sparar enormt med tid',
-      'Bra f\u00f6r elever att l\u00e4ra sig visuell kommunikation',
+      'Bra för elever att lära sig visuell kommunikation',
     ],
   },
 ]
@@ -141,7 +141,7 @@ function ToolCard({ tool }: { tool: Tool }) {
           <Button asChild variant="outline" size="sm" className="shrink-0">
             <a href={tool.link} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-4 w-4 mr-1.5" />
-              \u00d6ppna
+              Öppna
             </a>
           </Button>
         </div>
@@ -168,11 +168,11 @@ function ToolCard({ tool }: { tool: Tool }) {
 
         {expanded && (
           <div className="mt-4 space-y-6">
-            {/* Kom ig\u00e5ng */}
+            {/* Kom igång */}
             <div>
               <h3 className="font-semibold text-sm flex items-center gap-2 mb-3">
                 <Wrench className="h-4 w-4 text-primary" />
-                Kom ig\u00e5ng
+                Kom igång
               </h3>
               <ol className="list-decimal list-inside space-y-1.5 text-sm text-muted-foreground">
                 {tool.steps.map((step, i) => (
@@ -181,11 +181,11 @@ function ToolCard({ tool }: { tool: Tool }) {
               </ol>
             </div>
 
-            {/* L\u00e4raranv\u00e4ndning */}
+            {/* Läraranvändning */}
             <div>
               <h3 className="font-semibold text-sm flex items-center gap-2 mb-3">
                 <GraduationCap className="h-4 w-4 text-primary" />
-                L\u00e4raranv\u00e4ndning
+                Läraranvändning
               </h3>
               <ul className="list-disc list-inside space-y-1.5 text-sm text-muted-foreground">
                 {tool.teacherUse.map((item, i) => (
@@ -194,12 +194,12 @@ function ToolCard({ tool }: { tool: Tool }) {
               </ul>
             </div>
 
-            {/* Elevanv\u00e4ndning */}
+            {/* Elevanvändning */}
             {tool.studentUse && (
               <div>
                 <h3 className="font-semibold text-sm flex items-center gap-2 mb-3">
                   <BookOpen className="h-4 w-4 text-primary" />
-                  Elevanv\u00e4ndning
+                  Elevanvändning
                 </h3>
                 <ul className="list-disc list-inside space-y-1.5 text-sm text-muted-foreground">
                   {tool.studentUse.map((item, i) => (
@@ -233,10 +233,10 @@ export default function AIVerktygPage() {
     <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
       {/* Header */}
       <div className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">AI-verktyg f\u00f6r skolan</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-4">AI-verktyg för skolan</h1>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-          H\u00e4r samlar vi AI-verktyg som \u00e4r s\u00e4rskilt anv\u00e4ndbara f\u00f6r l\u00e4rare och elever. Varje verktyg
-          har en snabbguide, konkreta anv\u00e4ndningsomr\u00e5den och tips f\u00f6r att komma ig\u00e5ng.
+          Här samlar vi AI-verktyg som är särskilt användbara för lärare och elever. Varje verktyg
+          har en snabbguide, konkreta användningsområden och tips för att komma igång.
         </p>
       </div>
 
@@ -259,7 +259,7 @@ export default function AIVerktygPage() {
       <section className="rounded-xl border bg-muted/30 p-8">
         <h2 className="text-2xl font-bold mb-3">Utforska vidare</h2>
         <p className="text-muted-foreground mb-6">
-          Hitta f\u00e4rdiga prompts att anv\u00e4nda med dessa verktyg, eller f\u00f6rdjupa dig med v\u00e5ra fortbildningsmoduler.
+          Hitta färdiga prompts att använda med dessa verktyg, eller fördjupa dig med våra fortbildningsmoduler.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <Button asChild>

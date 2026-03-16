@@ -36,47 +36,47 @@ const SESSIONS: Session[] = [
     number: 1,
     title: 'Introduktion till AI',
     learningGoals: [
-      'F\u00f6rst\u00e5 vad generativ AI \u00e4r och inte \u00e4r',
-      'Skapa ett AI-konto och formulera sin f\u00f6rsta prompt',
-      'Diskutera m\u00f6jligheter OCH risker med AI i skolan',
+      'Förstå vad generativ AI är och inte är',
+      'Skapa ett AI-konto och formulera sin första prompt',
+      'Diskutera möjligheter OCH risker med AI i skolan',
     ],
     exercises: [
       {
-        title: 'Min f\u00f6rsta prompt',
+        title: 'Min första prompt',
         duration: '20 min',
         description:
-          'Alla skapar ett ChatGPT/Gemini-konto och testar att st\u00e4lla en fr\u00e5ga om sitt \u00e4mne',
+          'Alla skapar ett ChatGPT/Gemini-konto och testar att ställa en fråga om sitt ämne',
       },
       {
-        title: 'J\u00e4mf\u00f6r AI-svar',
+        title: 'Jämför AI-svar',
         duration: '15 min',
         description:
-          'St\u00e4ll samma fr\u00e5ga i tv\u00e5 olika verktyg, j\u00e4mf\u00f6r och diskutera skillnaderna',
+          'Ställ samma fråga i två olika verktyg, jämför och diskutera skillnaderna',
       },
       {
         title: 'Hallucinationsjakten',
         duration: '15 min',
         description:
-          'Be AI:n om fakta i ditt \u00e4mne och faktagranska svaret',
+          'Be AI:n om fakta i ditt ämne och faktagranska svaret',
       },
     ],
     discussionQuestions: [
-      'Vad \u00f6verraskade dig mest med AI:ns svar?',
+      'Vad överraskade dig mest med AI:ns svar?',
       'Vilka risker ser du med AI i undervisningen?',
-      'Hur tror du AI kommer p\u00e5verka ditt \u00e4mne de kommande \u00e5ren?',
-      'Vilka etiska fr\u00e5gor v\u00e4cker AI-anv\u00e4ndning i skolan?',
+      'Hur tror du AI kommer påverka ditt ämne de kommande åren?',
+      'Vilka etiska frågor väcker AI-användning i skolan?',
     ],
     documentation: [
-      'Skriv ner tre m\u00f6jligheter och tre risker med AI som du identifierat',
-      'Spara dina b\u00e4sta prompts fr\u00e5n \u00f6vningarna',
+      'Skriv ner tre möjligheter och tre risker med AI som du identifierat',
+      'Spara dina bästa prompts från övningarna',
     ],
   },
   {
     number: 2,
     title: 'Promptteknik och planering',
     learningGoals: [
-      'Beh\u00e4rska RUKF-modellen (Roll, Uppgift, Kontext, Format)',
-      'Skapa en lektionsplanering med AI-st\u00f6d',
+      'Behärska RUKF-modellen (Roll, Uppgift, Kontext, Format)',
+      'Skapa en lektionsplanering med AI-stöd',
       'Utforska NotebookLM, Gemini och Canva som verktyg',
     ],
     exercises: [
@@ -84,28 +84,28 @@ const SESSIONS: Session[] = [
         title: 'RUKF i praktiken',
         duration: '20 min',
         description:
-          'Formulera tre prompts med RUKF-modellen f\u00f6r ditt \u00e4mne',
+          'Formulera tre prompts med RUKF-modellen för ditt ämne',
       },
       {
         title: 'Lektionsplanering',
         duration: '25 min',
         description:
-          'Skapa en komplett lektionsplan med AI, granska och f\u00f6rb\u00e4ttra',
+          'Skapa en komplett lektionsplan med AI, granska och förbättra',
       },
       {
-        title: 'Verktygsl\u00e5dan',
+        title: 'Verktygslådan',
         duration: '15 min',
         description:
           'Testa NotebookLM med ett dokument, eller skapa en presentation i Gemini/Canva',
       },
     ],
     discussionQuestions: [
-      'Hur f\u00f6r\u00e4ndrades kvaliteten p\u00e5 AI:ns svar med RUKF?',
-      'Vad beh\u00f6ver du som l\u00e4rare tillf\u00f6ra som AI:n inte kan?',
-      'Vilket verktyg ser du mest potential i f\u00f6r ditt \u00e4mne?',
+      'Hur förändrades kvaliteten på AI:ns svar med RUKF?',
+      'Vad behöver du som lärare tillföra som AI:n inte kan?',
+      'Vilket verktyg ser du mest potential i för ditt ämne?',
     ],
     documentation: [
-      'Spara din b\u00e4sta lektionsplan',
+      'Spara din bästa lektionsplan',
       'Notera vilka verktyg du vill utforska vidare',
     ],
   },
@@ -114,21 +114,21 @@ const SESSIONS: Session[] = [
     title: 'AI i klassrummet',
     learningGoals: [
       'Planera elevaktiviteter med AI-inslag',
-      'F\u00f6rst\u00e5 hur AI kan st\u00f6dja studieteknik',
-      'Skapa en sokratisk AI-\u00f6vning f\u00f6r elever',
+      'Förstå hur AI kan stödja studieteknik',
+      'Skapa en sokratisk AI-övning för elever',
     ],
     exercises: [
       {
         title: 'AI-detektiven',
         duration: '20 min',
         description:
-          'Skapa en text med medvetna fel, testa p\u00e5 varandra',
+          'Skapa en text med medvetna fel, testa på varandra',
       },
       {
         title: 'Sokratisk dialog',
         duration: '20 min',
         description:
-          'Testa och utv\u00e4rdera en sokratisk AI-prompt som eleverna kan anv\u00e4nda',
+          'Testa och utvärdera en sokratisk AI-prompt som eleverna kan använda',
       },
       {
         title: 'Studieteknik med NotebookLM',
@@ -138,68 +138,68 @@ const SESSIONS: Session[] = [
       },
     ],
     discussionQuestions: [
-      'Hur s\u00e4kerst\u00e4ller vi att elever l\u00e4r sig MED AI ist\u00e4llet f\u00f6r att bara kopiera?',
-      'Vilka regler beh\u00f6ver vi ha f\u00f6r elevers AI-anv\u00e4ndning?',
-      'Hur kan vi anv\u00e4nda AI utan att \u00f6ka sk\u00e4rmtiden on\u00f6digt?',
+      'Hur säkerställer vi att elever lär sig MED AI istället för att bara kopiera?',
+      'Vilka regler behöver vi ha för elevers AI-användning?',
+      'Hur kan vi använda AI utan att öka skärmtiden onödigt?',
     ],
     documentation: [
-      'Skapa ett utkast till klassrumsregler f\u00f6r AI-anv\u00e4ndning',
+      'Skapa ett utkast till klassrumsregler för AI-användning',
       'Dokumentera en elevaktivitet du vill testa',
     ],
   },
   {
     number: 4,
-    title: 'Validitet, etik och k\u00e4llkritik',
+    title: 'Validitet, etik och källkritik',
     learningGoals: [
-      'F\u00f6rst\u00e5 hur AI p\u00e5verkar bed\u00f6mningens validitet',
+      'Förstå hur AI påverkar bedömningens validitet',
       'Kunna designa AI-resistenta uppgifter',
-      'Genomf\u00f6ra k\u00e4llkritiska \u00f6vningar med AI-genererat material',
+      'Genomföra källkritiska övningar med AI-genererat material',
     ],
     exercises: [
       {
         title: 'Uppgiftsdesign',
         duration: '25 min',
         description:
-          'Granska en befintlig uppgift: kan AI l\u00f6sa den? Omarbeta den f\u00f6r \u00f6kad validitet',
+          'Granska en befintlig uppgift: kan AI lösa den? Omarbeta den för ökad validitet',
       },
       {
-        title: 'K\u00e4llkritik\u00f6vning',
+        title: 'Källkritikövning',
         duration: '20 min',
         description:
-          'Be AI skapa en vilseledande text, analysera vad som g\u00f6r den \u00f6vertygande',
+          'Be AI skapa en vilseledande text, analysera vad som gör den övertygande',
       },
       {
         title: 'Etiskt dilemma',
         duration: '15 min',
         description:
-          'Diskutera case: en elev har anv\u00e4nt AI utan att ange det, hur hanterar vi det?',
+          'Diskutera case: en elev har använt AI utan att ange det, hur hanterar vi det?',
       },
     ],
     discussionQuestions: [
-      'Beh\u00f6ver vi \u00e4ndra hur vi bed\u00f6mer n\u00e4r AI finns?',
-      'Var g\u00e5r gr\u00e4nsen mellan hj\u00e4lpmedel och fusk?',
-      'Hur kan vi l\u00e4ra elever att vara k\u00e4llkritiska mot AI?',
-      'Vilka GDPR-aspekter beh\u00f6ver vi t\u00e4nka p\u00e5?',
+      'Behöver vi ändra hur vi bedömer när AI finns?',
+      'Var går gränsen mellan hjälpmedel och fusk?',
+      'Hur kan vi lära elever att vara källkritiska mot AI?',
+      'Vilka GDPR-aspekter behöver vi tänka på?',
     ],
     documentation: [
-      'Omarbeta en uppgift f\u00f6r \u00f6kad validitet',
-      'Skapa ett utkast till skolans st\u00e4llningstagande om AI och bed\u00f6mning',
+      'Omarbeta en uppgift för ökad validitet',
+      'Skapa ett utkast till skolans ställningstagande om AI och bedömning',
     ],
   },
   {
     number: 5,
-    title: 'F\u00f6rdjupning och fram\u00e5tblick',
+    title: 'Fördjupning och framåtblick',
     learningGoals: [
-      'Beh\u00e4rska avancerade prompttekniker',
-      'Skapa en handlingsplan f\u00f6r AI p\u00e5 skolan',
-      'Planera f\u00f6r fortsatt kollegialt l\u00e4rande',
+      'Behärska avancerade prompttekniker',
+      'Skapa en handlingsplan för AI på skolan',
+      'Planera för fortsatt kollegialt lärande',
     ],
     exercises: [
       {
         title: 'Avancerade tekniker',
         duration: '20 min',
         description:
-          'Testa few-shot prompting och chain-of-thought i ditt \u00e4mne',
+          'Testa few-shot prompting och chain-of-thought i ditt ämne',
       },
       {
         title: 'AI-policy',
@@ -211,18 +211,18 @@ const SESSIONS: Session[] = [
         title: 'Min handlingsplan',
         duration: '15 min',
         description:
-          'Varje deltagare skapar en personlig plan f\u00f6r AI-anv\u00e4ndning n\u00e4sta termin',
+          'Varje deltagare skapar en personlig plan för AI-användning nästa termin',
       },
     ],
     discussionQuestions: [
-      'Vad har f\u00f6r\u00e4ndrats i din syn p\u00e5 AI sedan tillf\u00e4lle 1?',
-      'Hur kan vi forts\u00e4tta utvecklas kollegialt?',
-      'Vilka verktyg och metoder vill vi prioritera fram\u00f6ver?',
+      'Vad har förändrats i din syn på AI sedan tillfälle 1?',
+      'Hur kan vi fortsätta utvecklas kollegialt?',
+      'Vilka verktyg och metoder vill vi prioritera framöver?',
     ],
     documentation: [
       'AI-policy-utkast',
       'Personlig handlingsplan',
-      'Utv\u00e4rdering av fortbildningen',
+      'Utvärdering av fortbildningen',
     ],
   },
 ]
@@ -333,9 +333,9 @@ export default function FortbildningPage() {
 
               {isExpanded && (
                 <CardContent className="space-y-6 pt-0">
-                  {/* L\u00e4randem\u00e5l */}
+                  {/* Lärandemål */}
                   <div>
-                    <SectionHeader icon={Target} title="L\u00e4randem\u00e5l" />
+                    <SectionHeader icon={Target} title="Lärandemål" />
                     <ul className="ml-6 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                       {session.learningGoals.map((goal, i) => (
                         <li key={i}>{goal}</li>
@@ -343,9 +343,9 @@ export default function FortbildningPage() {
                     </ul>
                   </div>
 
-                  {/* \u00d6vningar */}
+                  {/* Övningar */}
                   <div>
-                    <SectionHeader icon={Lightbulb} title="\u00d6vningar" />
+                    <SectionHeader icon={Lightbulb} title="Övningar" />
                     <div className="mt-2 space-y-3">
                       {session.exercises.map((ex, i) => (
                         <div
@@ -373,9 +373,9 @@ export default function FortbildningPage() {
                     </div>
                   </div>
 
-                  {/* Diskussionsfr\u00e5gor */}
+                  {/* Diskussionsfrågor */}
                   <div>
-                    <SectionHeader icon={MessageCircle} title="Diskussionsfr\u00e5gor" />
+                    <SectionHeader icon={MessageCircle} title="Diskussionsfrågor" />
                     <ol className="ml-6 mt-2 list-decimal space-y-1 text-sm text-muted-foreground">
                       {session.discussionQuestions.map((q, i) => (
                         <li key={i}>{q}</li>
