@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
-  title: 'AI i undervisningen | Oskars AI',
-  description: 'Konkreta sätt att använda AI i din undervisning. Lektionsplanering, differentiering, elevverktyg och klassrumsaktiviteter.',
+  title: 'AI i undervisningen',
+  description: 'Praktiska strategier för att använda AI i klassrummet. Lektionsplanering, differentiering och bedömning.',
 }
 
 function QuickWin({ title, children }: { title: string; children: React.ReactNode }) {

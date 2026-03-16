@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
-  title: 'Validitet & bedömning | Oskars AI',
-  description: 'Strategier för valid bedömning i en tid med AI. Checklistor, klassrumskontrakt och praktiska tips.',
+  title: 'Validitet & bedömning med AI',
+  description: 'Strategier och checklistor för att säkerställa valid bedömning när AI-verktyg finns tillgängliga.',
 }
 
 export default function ValiditetPage() {

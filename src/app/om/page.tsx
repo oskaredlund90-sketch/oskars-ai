@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
-  title: 'Om | Oskars AI',
-  description: 'Om Oskar och Oskars AI - en plattform som hjälper svenska lärare att använda AI i undervisningen.',
+  title: 'Om Oskars AI',
+  description: 'Om Oskar och syftet bakom Oskars AI - en lärandeplattform för lärare om AI i undervisningen.',
 }
 
 export default function OmPage() {

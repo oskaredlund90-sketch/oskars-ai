@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
-  title: 'Promptteknik - RUKF-modellen | Oskars AI',
-  description: 'Lär dig RUKF-modellen för att skriva effektiva AI-prompts: Roll, Uppgift, Kontext och Format.',
+  title: 'Promptteknik & RUKF-modellen',
+  description: 'Lär dig skriva effektiva AI-prompts med RUKF-modellen: Roll, Uppgift, Kontext, Format.',
 }
 
 export default function PromptteknikPage() {

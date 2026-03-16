@@ -6,8 +6,8 @@ import { Badge } from '@/components/ui/badge'
 import { SUBJECTS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Ämnen | Oskars AI',
-  description: 'AI-tips och strategier anpassade för varje skolämne. Hitta konkreta förslag för just ditt ämne.',
+  title: 'Ämnesguider',
+  description: 'AI-tips och strategier anpassade för varje skolämne. Från svenska till slöjd.',
 }
 
 export default function AmnenPage() {

@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
-  title: 'Projekt | Oskars AI',
-  description: 'Verktyg och plattformar jag har byggt för att stödja lärande och undervisning med AI.',
+  title: 'Mina projekt',
+  description: 'Verktyg och plattformar byggda för att stödja lärande och undervisning med AI.',
 }
 
 const PROJECTS = [
