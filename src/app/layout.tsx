@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { ThemeProvider } from '@/components/theme-provider'
+import { ChatBubble } from '@/components/chat-bubble'
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants'
 
 const inter = Inter({
@@ -50,6 +51,7 @@ export default function RootLayout({
             <Header />
             <main className="min-h-[calc(100vh-4rem)]">{children}</main>
             <Footer />
+            <ChatBubble />
           </TooltipProvider>
         </ThemeProvider>
       </body>
