@@ -173,7 +173,7 @@ export default function IUndervisningenPage() {
           <p>
             AI kan också vara ett värdefullt verktyg för eleverna själva &ndash; men det kräver
             tydlig vägledning. Nyckeln är att använda AI som ett <em>lärande</em>verktyg, inte
-            som ett <em>fuskvektyg</em>.
+            som ett <em>fuskverktyg</em>.
           </p>
           <Card className="bg-muted/30">
             <CardContent className="pt-6">

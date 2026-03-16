@@ -82,12 +82,6 @@ export default async function SubjectPage({ params }: Props) {
             </div>
           </CardContent>
         </Card>
-        <div className="mt-4 p-4 rounded-lg border border-dashed border-muted-foreground/30 text-center">
-          <Badge variant="secondary" className="mb-2">Kommer snart</Badge>
-          <p className="text-sm text-muted-foreground">
-            Fördjupat innehåll om AI-möjligheter i {subject.name.toLowerCase()} är under utveckling.
-          </p>
-        </div>
       </section>
 
       {/* Section 2: Exempelprompts */}
@@ -140,12 +134,10 @@ export default async function SubjectPage({ params }: Props) {
             </CardContent>
           </Card>
         </div>
-        <div className="mt-4 p-4 rounded-lg border border-dashed border-muted-foreground/30 text-center">
-          <Badge variant="secondary" className="mb-2">Kommer snart</Badge>
-          <p className="text-sm text-muted-foreground">
-            Fler ämnesspecifika prompts för {subject.name.toLowerCase()} är under utveckling.
-          </p>
-        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Fler ämnesspecifika prompts hittar du i{' '}
+          <Link href="/promptbibliotek" className="text-primary hover:underline">promptbiblioteket</Link>.
+        </p>
       </section>
 
       {/* Section 3: Lektionsidéer */}
@@ -206,12 +198,10 @@ export default async function SubjectPage({ params }: Props) {
             </CardContent>
           </Card>
         </div>
-        <div className="mt-4 p-4 rounded-lg border border-dashed border-muted-foreground/30 text-center">
-          <Badge variant="secondary" className="mb-2">Kommer snart</Badge>
-          <p className="text-sm text-muted-foreground">
-            Fler lektionsidéer specifikt för {subject.name.toLowerCase()} kommer löpande.
-          </p>
-        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Har du en egen aktivitetsidé som fungerat bra? Dela gärna med dig via{' '}
+          <Link href="/om" className="text-primary hover:underline">kontaktsidan</Link>.
+        </p>
       </section>
 
       {/* Section 4: Validitetstips */}
