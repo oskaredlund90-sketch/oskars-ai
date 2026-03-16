@@ -26,9 +26,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl text-foreground hover:opacity-80 transition-opacity">
-          <Image src="/logo.png" alt={SITE_NAME} width={32} height={32} className="h-8 w-8" />
-          {SITE_NAME}
+        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <Image src="/logo.png" alt={SITE_NAME} width={44} height={44} className="h-11 w-11" />
         </Link>
 
         {/* Desktop nav */}
@@ -84,7 +83,7 @@ export function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetTitle className="flex items-center gap-2 font-bold text-lg mb-6">
-              <Image src="/logo.png" alt={SITE_NAME} width={28} height={28} className="h-7 w-7" />
+              <Image src="/logo.png" alt={SITE_NAME} width={40} height={40} className="h-10 w-10" />
               {SITE_NAME}
             </SheetTitle>
             <nav className="flex flex-col gap-1">
