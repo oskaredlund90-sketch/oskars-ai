@@ -77,6 +77,66 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 7,
+    question: 'Vad innebär det att "iterera" på en prompt?',
+    options: [
+      'Att skriva prompten på engelska istället för svenska',
+      'Att stegvis förfina och förbättra sin prompt baserat på AI:ns svar',
+      'Att skicka samma prompt flera gånger för att få olika svar',
+      'Att använda flera olika AI-verktyg samtidigt',
+    ],
+    correctAnswer: 1,
+    level: 2,
+  },
+  {
+    id: 8,
+    question: 'Varför är det viktigt att källkritiskt granska AI-genererade svar?',
+    options: [
+      'AI har alltid rätt men formulerar sig otydligt',
+      'AI kan generera övertygande text som innehåller fabricerade fakta och falska källhänvisningar',
+      'AI kopierar bara text från Wikipedia',
+      'Det behövs inte om man använder en betaltjänst',
+    ],
+    correctAnswer: 1,
+    level: 2,
+  },
+  {
+    id: 9,
+    question: 'Vad skiljer ett verktyg som NotebookLM från en vanlig AI-chatbot?',
+    options: [
+      'Det kan generera bilder',
+      'Det är gratis medan andra kostar pengar',
+      'Det grundar sina svar i dokument du laddar upp, vilket minskar hallucinationer',
+      'Det kan söka på internet i realtid',
+    ],
+    correctAnswer: 2,
+    level: 3,
+  },
+  {
+    id: 10,
+    question: 'Vilket av följande är en konkret risk med att använda AI-verktyg i svenska skolan?',
+    options: [
+      'AI kan ta över lärarens tjänst',
+      'Elevdata kan hanteras utanför EU i strid med GDPR',
+      'AI-verktyg fungerar inte på svenska',
+      'AI ger alltid samma svar till alla elever',
+    ],
+    correctAnswer: 1,
+    level: 3,
+  },
+  {
+    id: 11,
+    question: 'Hur kan AI användas för att träna elevers kritiska tänkande, snarare än att ge dem färdiga svar?',
+    options: [
+      'Genom att förbjuda AI i klassrummet',
+      'Genom att låta AI rätta alla uppgifter automatiskt',
+      'Genom att ställa in AI:n som en sokratisk samtalspartner som ställer motfrågor istället för att ge svar direkt',
+      'Genom att bara använda AI för bildgenerering',
+    ],
+    correctAnswer: 2,
+    level: 4,
+  },
+  {
+    id: 12,
     question: 'Vad innebär "few-shot prompting"?',
     options: [
       'Att ge AI:n så kort prompt som möjligt',
@@ -88,7 +148,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     level: 4,
   },
   {
-    id: 8,
+    id: 13,
     question: 'Vilket påstående om AI och upphovsrätt i skolan stämmer bäst?',
     options: [
       'AI-genererat material har ingen upphovsman och kan användas fritt',
@@ -100,7 +160,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     level: 4,
   },
   {
-    id: 9,
+    id: 14,
     question: 'Hur kan man bäst leda kollegialt lärande om AI på sin skola?',
     options: [
       'Genom att hålla en enskild föreläsning om AI',
@@ -112,7 +172,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     level: 5,
   },
   {
-    id: 10,
+    id: 15,
     question: 'Vad är en viktig aspekt att tänka på vid implementering av AI-policy på skolnivå?',
     options: [
       'Att enbart fokusera på förbud och begränsningar',
