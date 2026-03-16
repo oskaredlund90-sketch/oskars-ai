@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { ThemeProvider } from '@/components/theme-provider'
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants'
 
 const inter = Inter({
@@ -42,13 +43,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="sv">
+    <html lang="sv" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
-        <TooltipProvider>
-          <Header />
-          <main className="min-h-[calc(100vh-4rem)]">{children}</main>
-          <Footer />
-        </TooltipProvider>
+        <ThemeProvider>
+          <TooltipProvider>
+            <Header />
+            <main className="min-h-[calc(100vh-4rem)]">{children}</main>
+            <Footer />
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

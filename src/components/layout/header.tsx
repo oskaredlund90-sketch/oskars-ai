@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Menu, ChevronDown, Sparkles } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'
 import { NAV_ITEMS, SITE_NAME } from '@/lib/constants'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -69,11 +70,14 @@ export function Header() {
               </Link>
             )
           })}
+          <ThemeToggle />
         </nav>
 
         {/* Mobile nav */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-lg hover:bg-accent hover:text-accent-foreground transition-all">
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger className="inline-flex items-center justify-center h-9 w-9 rounded-lg hover:bg-accent hover:text-accent-foreground transition-all">
             <Menu className="h-5 w-5" />
             <span className="sr-only">Meny</span>
           </SheetTrigger>
@@ -117,6 +121,7 @@ export function Header() {
             </nav>
           </SheetContent>
         </Sheet>
+        </div>
       </div>
     </header>
   )

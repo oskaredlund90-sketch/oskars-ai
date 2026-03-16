@@ -19,6 +19,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { PrintButton } from '@/components/print-button'
 
 const STORAGE_KEY = 'oskarsai_fortbildning'
 
@@ -282,6 +283,9 @@ export default function FortbildningPage() {
           tillf&auml;lle &auml;r ca 90 minuter och inneh&aring;ller &ouml;vningar,
           diskussioner och dokumentation.
         </p>
+        <div className="mt-4 flex justify-center">
+          <PrintButton />
+        </div>
       </div>
 
       {/* Tips card */}

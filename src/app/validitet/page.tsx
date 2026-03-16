@@ -4,6 +4,7 @@ import { ShieldCheck, CheckCircle, FileText, Users, HelpCircle, ArrowRight, Sear
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { PrintButton } from '@/components/print-button'
 
 export const metadata: Metadata = {
   title: 'Validitet & bedömning med AI',
@@ -22,6 +23,9 @@ export default function ValiditetPage() {
           Hur säkerställer vi att bedömningen förblir valid och rättvis när AI-verktyg finns
           tillgängliga? Här hittar du strategier, checklistor och konkreta verktyg.
         </p>
+        <div className="mt-4">
+          <PrintButton />
+        </div>
       </div>
 
       {/* Section 1: Vad är validitet? */}

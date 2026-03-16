@@ -372,6 +372,24 @@ export default function StudieteknikPage() {
         </div>
       </section>
 
+      {/* Elevsida-länk */}
+      <section className="mb-12 rounded-xl border border-primary/20 bg-primary/5 p-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h3 className="font-bold text-lg mb-1">Dela med dina elever</h3>
+            <p className="text-sm text-muted-foreground">
+              Vi har en sida med studietips riktad direkt till elever &ndash; enkel, konkret och på deras nivå.
+            </p>
+          </div>
+          <Button asChild variant="outline" size="sm">
+            <Link href="/studieteknik-elever">
+              Studieteknik för elever
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
       {/* Nästa steg */}
       <section className="rounded-xl border bg-muted/30 p-8">
         <h2 className="text-2xl font-bold mb-3">Fördjupa dig</h2>

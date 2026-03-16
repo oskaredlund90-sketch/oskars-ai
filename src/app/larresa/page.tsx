@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { LEVELS } from '@/lib/constants'
+import { PrintButton } from '@/components/print-button'
 
 interface LevelData {
   level: number
@@ -151,6 +152,9 @@ export default function LarresaPage() {
         <p className="text-muted-foreground">
           Steg anpassade efter din nivå. Markera steg som avklarade allt eftersom du lär dig.
         </p>
+        <div className="mt-4">
+          <PrintButton />
+        </div>
       </div>
 
       {/* Horizontal stepper - desktop */}

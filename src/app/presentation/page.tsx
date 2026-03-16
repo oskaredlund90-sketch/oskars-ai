@@ -26,6 +26,8 @@ import {
   Zap,
   ExternalLink,
   Target,
+  Maximize,
+  Minimize,
 } from 'lucide-react'
 
 // ---------------------------------------------------------------------------
@@ -564,6 +566,7 @@ const slides: Slide[] = [
 export default function PresentationPage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [showNotes, setShowNotes] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
 
   const totalSlides = slides.length
   const slide = slides[currentSlide]
@@ -580,6 +583,23 @@ export default function PresentationPage() {
     setShowNotes((prev) => !prev)
   }, [])
 
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen()
+    } else {
+      document.exitFullscreen()
+    }
+  }, [])
+
+  // Fullscreen change listener
+  useEffect(() => {
+    function handleFsChange() {
+      setIsFullscreen(!!document.fullscreenElement)
+    }
+    document.addEventListener('fullscreenchange', handleFsChange)
+    return () => document.removeEventListener('fullscreenchange', handleFsChange)
+  }, [])
+
   // Keyboard navigation
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
@@ -592,12 +612,15 @@ export default function PresentationPage() {
       } else if (e.key === 'n' || e.key === 'N') {
         e.preventDefault()
         toggleNotes()
+      } else if (e.key === 'f' || e.key === 'F') {
+        e.preventDefault()
+        toggleFullscreen()
       }
     }
 
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
-  }, [goNext, goPrev, toggleNotes])
+  }, [goNext, goPrev, toggleNotes, toggleFullscreen])
 
   const progressPercent = ((currentSlide + 1) / totalSlides) * 100
 
@@ -662,6 +685,14 @@ export default function PresentationPage() {
           >
             <StickyNote className="size-4" />
             <span className="hidden sm:inline">Noteringar</span>
+          </Button>
+          <Button
+            variant="outline"
+            size="icon-sm"
+            onClick={toggleFullscreen}
+            aria-label={isFullscreen ? 'Avsluta fullskärm' : 'Fullskärm'}
+          >
+            {isFullscreen ? <Minimize className="size-4" /> : <Maximize className="size-4" />}
           </Button>
           <Button
             variant="outline"

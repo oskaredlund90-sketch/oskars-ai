@@ -37,6 +37,8 @@ export function Footer() {
               <li><Link href="/studieteknik" className="hover:text-foreground transition-colors">Studieteknik</Link></li>
               <li><Link href="/validitet" className="hover:text-foreground transition-colors">Validitet</Link></li>
               <li><Link href="/fortbildning" className="hover:text-foreground transition-colors">Fortbildning</Link></li>
+              <li><Link href="/ordlista" className="hover:text-foreground transition-colors">Ordlista</Link></li>
+              <li><Link href="/studieteknik-elever" className="hover:text-foreground transition-colors">Studieteknik (elever)</Link></li>
             </ul>
           </div>
 
