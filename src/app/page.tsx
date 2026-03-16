@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, BookOpen, Brain, Target, Lightbulb, GraduationCap, Sparkles, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -52,21 +53,31 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-          <div className="max-w-3xl">
-            <Badge variant="secondary" className="mb-4 text-sm font-medium px-3 py-1">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-12 pb-20 md:pt-16 md:pb-28">
+          <div className="flex flex-col items-center text-center mb-10">
+            <Image
+              src="/logo.png"
+              alt="Oskars AI"
+              width={600}
+              height={180}
+              className="w-64 sm:w-80 md:w-96 h-auto mb-6"
+              priority
+            />
+            <Badge variant="secondary" className="text-sm font-medium px-3 py-1">
               <Sparkles className="h-3.5 w-3.5 mr-1.5" />
               För lärare i grundskola & gymnasium
             </Badge>
+          </div>
+          <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
               Lär dig använda AI i din undervisning
               <span className="text-primary"> – steg för steg</span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
               AI är ett kraftfullt redskap &ndash; med både möjligheter och begränsningar. Här får du
               konkreta verktyg, ett kritiskt förhållningssätt och en personlig lärresa anpassad efter din nivå.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild size="lg" className="text-base px-6">
                 <Link href="/nivatest">
                   Testa din nivå
