@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
-import { Menu, ChevronDown, Sparkles } from 'lucide-react'
+import { Menu, ChevronDown } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'
 import { NAV_ITEMS, SITE_NAME } from '@/lib/constants'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -26,7 +27,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl text-foreground hover:opacity-80 transition-opacity">
-          <Sparkles className="h-6 w-6 text-primary" />
+          <Image src="/logo.png" alt={SITE_NAME} width={32} height={32} className="h-8 w-8" />
           {SITE_NAME}
         </Link>
 
@@ -83,7 +84,7 @@ export function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetTitle className="flex items-center gap-2 font-bold text-lg mb-6">
-              <Sparkles className="h-5 w-5 text-primary" />
+              <Image src="/logo.png" alt={SITE_NAME} width={28} height={28} className="h-7 w-7" />
               {SITE_NAME}
             </SheetTitle>
             <nav className="flex flex-col gap-1">
