@@ -27,7 +27,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-          <Image src="/logo.png" alt={SITE_NAME} width={48} height={48} className="h-12 w-12" />
+          <Image src="/logo.png" alt={SITE_NAME} width={56} height={56} className="h-14 w-14" />
         </Link>
 
         {/* Desktop nav */}
