@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, Brain, BookOpen, RefreshCcw, AlertTriangle, GraduationCap, Zap } from 'lucide-react'
+import { ArrowRight, Brain, BookOpen, RefreshCcw, AlertTriangle, GraduationCap, Zap, ExternalLink, Headphones } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -188,7 +188,63 @@ export default function StudieteknikPage() {
         </div>
       </section>
 
-      {/* Section 3: Vad läraren kan göra */}
+      {/* Section 3: NotebookLM */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Headphones className="h-5 w-5 text-primary" />
+          </div>
+          <h2 className="text-2xl font-bold">NotebookLM &ndash; AI grundad i ditt material</h2>
+        </div>
+        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
+          <p>
+            <a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium">NotebookLM</a> från
+            Google är ett av de bästa verktygen för studieteknik med AI. Till skillnad från vanliga
+            chatbots grundar NotebookLM sina svar i <em>dina egna uppladdade dokument</em> &ndash;
+            vilket minskar hallucinationer dramatiskt.
+          </p>
+          <Card className="bg-muted/30">
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-3 text-foreground">Så fungerar det för elever</h3>
+              <ol className="list-decimal list-inside space-y-2 text-sm">
+                <li>Eleven laddar upp sina anteckningar, bokkapitel eller kursplan i ett NotebookLM-projekt.</li>
+                <li>AI:n analyserar materialet och kan svara på frågor &ndash; grundat i källorna.</li>
+                <li>Eleven kan be om sammanfattningar, quiz-frågor eller förklaringar av svåra begrepp.</li>
+                <li>Funktionen <strong>Audio Overview</strong> skapar en podcast-liknande genomgång av materialet &ndash; perfekt för repetition på bussen eller promenaden.</li>
+              </ol>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">Varför NotebookLM passar studieteknik</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-sm space-y-2">
+                <span className="block">
+                  <strong>Minskad hallucination:</strong> Svaren baseras på elevens egna material, inte på AI:ns generella
+                  träningsdata. Eleven lär sig från det rätta innehållet.
+                </span>
+                <span className="block">
+                  <strong>Audio Overview:</strong> Eleverna kan lyssna på en sammanfattning av sina anteckningar.
+                  Perfekt för auditiva inlärare och för repetition i rörelse.
+                </span>
+                <span className="block">
+                  <strong>Källkoppling:</strong> Varje svar visar vilken del av materialet det baseras på,
+                  vilket tränar eleven att följa upp och verifiera.
+                </span>
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+        <QuickWin title="NotebookLM-studiepass">
+          Ladda upp ett bokkapitel eller dina anteckningar till NotebookLM. Testa sedan:
+          1) Be om 10 quiz-frågor baserade på materialet. 2) Be om en sammanfattning av de viktigaste
+          begreppen. 3) Prova Audio Overview och lyssna på en &quot;podcast&quot; av dina anteckningar.
+        </QuickWin>
+      </section>
+
+      {/* Section 4: Vad läraren kan göra */}
       <section className="mb-16">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">

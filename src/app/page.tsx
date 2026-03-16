@@ -32,17 +32,17 @@ const PROJECTS = [
   {
     name: 'Jurni',
     description: 'AI-driven plattform för personligt lärande och reflektion.',
-    url: '#',
-  },
-  {
-    name: 'Feedbacker',
-    description: 'Verktyg för effektiv, AI-stödd återkoppling till elever.',
-    url: '#',
+    url: 'https://www.jurni.se',
   },
   {
     name: 'LektionsFlow',
     description: 'Smarta lektionsplaneringar med AI som sparar tid och höjer kvaliteten.',
-    url: '#',
+    url: 'https://www.lektionsflow.se',
+  },
+  {
+    name: 'Feedbacker',
+    description: 'Verktyg för effektiv, AI-stödd återkoppling till elever.',
+    url: 'https://feedbacker-nine.vercel.app/',
   },
 ]
 
@@ -63,8 +63,8 @@ export default function HomePage() {
               <span className="text-primary"> – steg för steg</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
-              AI är ett fantastiskt redskap när det används rätt. Här får du konkreta verktyg,
-              pedagogiskt genomtänkta strategier och en personlig lärresa anpassad efter din nivå.
+              AI är ett kraftfullt redskap &ndash; med både möjligheter och begränsningar. Här får du
+              konkreta verktyg, ett kritiskt förhållningssätt och en personlig lärresa anpassad efter din nivå.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base px-6">
@@ -177,8 +177,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Projekt */}
+      {/* Studieteknik + Fortbildning highlight */}
       <section className="py-16 md:py-20 bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="border-violet-200 bg-violet-50/30 hover:shadow-md transition-shadow">
+              <CardHeader>
+                <div className="h-10 w-10 rounded-lg bg-violet-100 flex items-center justify-center mb-2">
+                  <GraduationCap className="h-5 w-5 text-violet-700" />
+                </div>
+                <CardTitle className="text-xl">Studieteknik med AI</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <CardDescription className="text-base">
+                  Lär eleverna använda AI som studieverktyg &ndash; inte fuskverktyg. Evidensbaserade
+                  metoder, sokratisk dialog och NotebookLM.
+                </CardDescription>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/studieteknik">
+                    Utforska studieteknik
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="border-amber-200 bg-amber-50/30 hover:shadow-md transition-shadow">
+              <CardHeader>
+                <div className="h-10 w-10 rounded-lg bg-amber-100 flex items-center justify-center mb-2">
+                  <Target className="h-5 w-5 text-amber-700" />
+                </div>
+                <CardTitle className="text-xl">Fortbildning för skolor</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <CardDescription className="text-base">
+                  Färdigt fortbildningspaket med 5 tillfällen. Övningar, diskussionsfrågor och
+                  dokumentation &ndash; redo att köra.
+                </CardDescription>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/fortbildning">
+                    Se fortbildningen
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Projekt */}
+      <section className="py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-3">Mina projekt</h2>

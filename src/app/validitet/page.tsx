@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ShieldCheck, CheckCircle, FileText, Users, HelpCircle, ArrowRight } from 'lucide-react'
+import { ShieldCheck, CheckCircle, FileText, Users, HelpCircle, ArrowRight, Search, AlertTriangle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -133,6 +133,92 @@ export default function ValiditetPage() {
                 skriftliga arbete plötsligt avviker kraftigt från muntlig prestation, är det
                 en signal att undersöka vidare &ndash; inte nödvändigtvis att anklaga.
               </CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Section: Källkritik och AI */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Search className="h-5 w-5 text-primary" />
+          </div>
+          <h2 className="text-2xl font-bold">Källkritik i AI-eran</h2>
+        </div>
+        <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <p>
+            AI-verktyg presenterar information med stor självsäkerhet &ndash; oavsett om den stämmer
+            eller inte. Det gör källkritik viktigare än någonsin. Elever behöver inte bara kunna
+            granska traditionella källor, utan också förstå hur AI-genererat innehåll kan vilseleda.
+          </p>
+
+          <Card className="border-amber-200 bg-amber-50/50">
+            <CardContent className="py-4 flex items-start gap-3">
+              <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+              <p className="text-sm text-amber-900/80">
+                AI kan generera övertygande men felaktig information, inklusive fabricerade
+                källhänvisningar, påhittade citat och felaktiga fakta. Lär eleverna att
+                alltid verifiera AI-genererat innehåll mot tillförlitliga källor.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">Källkritiska frågor för AI-innehåll</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm">
+                {[
+                  'Kan jag verifiera detta påstående med en oberoende källa?',
+                  'Finns källan som AI hänvisar till verkligen? (Kontrollera – AI fabricerar ofta referenslänkar)',
+                  'Är informationen aktuell? AI-modeller har en kunskapsavstängning och kan ge utdaterad information.',
+                  'Visar AI:n en balanserad bild, eller saknas viktiga perspektiv?',
+                  'Skulle en expert inom ämnet hålla med om detta?',
+                ].map((q, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">&#x2022;</span>
+                    <span>{q}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-muted/30">
+            <CardHeader>
+              <Badge variant="secondary" className="w-fit mb-1">Klassrumsövning</Badge>
+              <CardTitle className="text-lg">Lära genom att göra: Skapa vilseledande AI-innehåll</CardTitle>
+              <CardDescription>45&ndash;60 min &middot; Årskurs 7&ndash;9 / Gymnasium</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm">
+              <p>
+                Ett kraftfullt sätt att lära sig källkritik är att själv förstå hur desinformation
+                kan skapas. I denna övning får eleverna utforska AI:ns begränsningar inifrån.
+              </p>
+              <div className="space-y-2">
+                <div>
+                  <strong>Steg 1: Skapa</strong> (15 min)<br />
+                  Eleverna ber AI att skriva en övertygande men felaktig text om ett ämne de
+                  känner till väl. Målet: en text som låter trovärdig men innehåller fel.
+                </div>
+                <div>
+                  <strong>Steg 2: Granska</strong> (15 min)<br />
+                  Byt texter med en klasskompis. Kan de hitta felen? Vilka tekniker använde
+                  AI:n för att låta övertygande? Hur känner man igen fabricerade fakta?
+                </div>
+                <div>
+                  <strong>Steg 3: Reflektera</strong> (15 min)<br />
+                  Diskutera i helklass: Vad lärde vi oss? Hur påverkar detta vår syn på
+                  information vi möter online? Vilka strategier kan vi använda för att skydda oss?
+                </div>
+              </div>
+              <p className="text-muted-foreground/80 italic">
+                Poängen är inte att lära eleverna att skapa desinformation, utan att ge dem
+                verktyg att genomskåda den. Den som förstår hur något skapas kan lättare
+                avslöja det.
+              </p>
             </CardContent>
           </Card>
         </div>

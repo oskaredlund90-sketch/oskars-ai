@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, Brain, ClipboardCheck, Users, FileText, Sparkles, Target, Lightbulb, Zap } from 'lucide-react'
+import { ArrowRight, Brain, ClipboardCheck, Users, FileText, Sparkles, Target, Lightbulb, Zap, Scale } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -337,6 +337,72 @@ export default function AvanceratPage() {
           regler för elever, riktlinjer för lärare, och datum för revidering. Tonen ska vara
           positiv och uppmuntrande.&quot;
         </QuickWin>
+      </section>
+
+      {/* Section 5: Etik och ansvarsfullt AI-ledarskap */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Scale className="h-5 w-5 text-primary" />
+          </div>
+          <h2 className="text-2xl font-bold">Etik och ansvarsfullt AI-ledarskap</h2>
+        </div>
+        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
+          <p>
+            Som den som leder AI-arbetet på skolan har du ett särskilt ansvar att också lyfta de
+            svåra frågorna. AI är inte neutralt &ndash; det är ett verktyg format av de val vi gör
+            och den data det tränats på.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Akademisk integritet</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  Var går gränsen mellan hjälpmedel och fusk? Det finns inget universellt svar.
+                  Skolan behöver en tydlig, gemensam hållning som kommuniceras till alla parter.
+                  Fokusera på lärande snarare än kontroll.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Människan i centrum</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  AI ska aldrig ersätta den mänskliga relationen i klassrummet. Lärarens professionella
+                  omdöme, empati och förmåga att möta varje elev är och förblir det viktigaste.
+                  AI är ett komplement, inte en ersättare.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Likvärdighet</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  Elever har olika tillgång till AI-verktyg hemma. Var medveten om att AI-uppgifter
+                  kan förstärka ojämlikhet. Säkerställ att alla elever får tillgång till verktyg
+                  och utbildning i skolan.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Transparens</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  Var öppen med hur du och skolan använder AI. Dela med er av både framgångar
+                  och utmaningar. Bjud in vårdnadshavare i dialogen. Transparens bygger förtroende.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </section>
 
       {/* Nästa steg */}

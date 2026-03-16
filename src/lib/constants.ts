@@ -36,9 +36,20 @@ export const PROMPT_PURPOSES = [
 export const NAV_ITEMS = [
   { href: '/nivatest', label: 'Nivåtest' },
   { href: '/larresa', label: 'Lärresa' },
-  { href: '/grunder', label: 'Grunder' },
+  {
+    label: 'Lärande',
+    children: [
+      { href: '/grunder', label: 'AI-grunder' },
+      { href: '/ai-verktyg', label: 'AI-verktyg' },
+      { href: '/studieteknik', label: 'Studieteknik' },
+      { href: '/promptteknik', label: 'Promptteknik' },
+      { href: '/avancerat', label: 'Avancerat' },
+    ],
+  },
   { href: '/amnen', label: 'Ämnen' },
   { href: '/promptbibliotek', label: 'Promptbibliotek' },
-  { href: '/validitet', label: 'Validitet' },
+  { href: '/fortbildning', label: 'Fortbildning' },
   { href: '/projekt', label: 'Projekt' },
 ] as const
+
+export type NavItem = (typeof NAV_ITEMS)[number]

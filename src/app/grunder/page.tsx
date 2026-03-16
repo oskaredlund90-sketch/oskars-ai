@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, Bot, Brain, MessageSquare, Sparkles, Lightbulb, BookOpen, Zap } from 'lucide-react'
+import { ArrowRight, Bot, Brain, MessageSquare, Sparkles, Lightbulb, BookOpen, Zap, AlertTriangle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -117,7 +117,88 @@ export default function GrunderPage() {
         </QuickWin>
       </section>
 
-      {/* Section 3: Dina första steg */}
+      {/* Section 3: Begränsningar och risker */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-10 w-10 rounded-lg bg-destructive/10 flex items-center justify-center">
+            <AlertTriangle className="h-5 w-5 text-destructive" />
+          </div>
+          <h2 className="text-2xl font-bold">Begränsningar och risker</h2>
+        </div>
+        <div className="space-y-4 text-muted-foreground leading-relaxed mb-6">
+          <p>
+            AI är imponerande, men det är viktigt att förstå vad det <em>inte</em> kan &ndash; och vad
+            som kan gå fel. Att vara medveten om riskerna gör dig till en bättre och tryggare AI-användare.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Card className="border-red-200/50">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Hallucinationer</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  AI kan med stor självsäkerhet presentera information som är helt felaktig. Det gäller
+                  särskilt fakta, namn, årtal, källor och &ndash; viktigt för lärare &ndash; läroplansinnehåll.
+                  Verifiera alltid mot tillförlitliga källor.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card className="border-red-200/50">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Bias och fördomar</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  AI-modeller tränas på data som speglar samhällets fördomar. Det kan leda till
+                  stereotypa eller snedvridna svar, särskilt kring kön, etnicitet och kultur. Var
+                  uppmärksam och granska kritiskt.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card className="border-red-200/50">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Integritet och GDPR</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  Dela aldrig personuppgifter eller elevdata med AI-verktyg. Många AI-tjänster lagrar
+                  konversationer. Var särskilt försiktig med namn, betyg och känslig information.
+                  Kontrollera er kommuns riktlinjer.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card className="border-red-200/50">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">Överdriven tillit</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  Ju mer vi använder AI, desto lättare är det att sluta ifrågasätta. Det är en risk
+                  både för oss som lärare och för våra elever. Kritiskt tänkande är viktigare än
+                  någonsin &ndash; inte mindre.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+          <Card className="bg-muted/30">
+            <CardContent className="pt-6">
+              <h3 className="font-semibold mb-2">Miljöpåverkan</h3>
+              <p className="text-sm">
+                Att träna och köra AI-modeller kräver enorma mängder energi och vatten. Varje fråga
+                du ställer har en miljökostnad. Det betyder inte att vi ska sluta använda AI, men det
+                är bra att ha i åtanke och använda det medvetet snarare än slentrianmässigt.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+        <QuickWin title="Avslöja en hallucination">
+          Be AI:n rekommendera &quot;tre vetenskapliga artiklar om [valfritt ämne] publicerade 2024&quot;.
+          Sök sedan upp artiklarna. Finns de verkligen? I de flesta fall hittar du på att AI:n blandar
+          verkliga och påhittade referenser &ndash; ofta med korrekta författarnamn men felaktiga titlar.
+        </QuickWin>
+      </section>
+
+      {/* Section 4: Dina första steg */}
       <section className="mb-16">
         <div className="flex items-center gap-3 mb-4">
           <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">

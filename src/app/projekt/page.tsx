@@ -24,22 +24,7 @@ const PROJECTS = [
     ],
     icon: Sparkles,
     color: 'bg-violet-100 text-violet-700 border-violet-200',
-    url: '#',
-  },
-  {
-    name: 'Feedbacker',
-    tagline: 'Effektiv, AI-stödd återkoppling',
-    description:
-      'Feedbacker hjälper lärare att ge snabb, personlig och framåtsyftande feedback till varje elev. Genom att analysera elevtexter mot kunskapskrav och bedömningskriterier genererar verktyget utkast till feedback som läraren sedan granskar och anpassar.',
-    features: [
-      'Analyserar elevtexter mot angivna kunskapskrav',
-      'Genererar framåtsyftande feedback-utkast',
-      'Sparar tid utan att tumma på kvalitet',
-      'Läraren har alltid sista ordet',
-    ],
-    icon: MessageCircle,
-    color: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-    url: '#',
+    url: 'https://www.jurni.se',
   },
   {
     name: 'LektionsFlow',
@@ -54,7 +39,22 @@ const PROJECTS = [
     ],
     icon: Calendar,
     color: 'bg-amber-100 text-amber-700 border-amber-200',
-    url: '#',
+    url: 'https://www.lektionsflow.se',
+  },
+  {
+    name: 'Feedbacker',
+    tagline: 'Effektiv, AI-stödd återkoppling',
+    description:
+      'Feedbacker hjälper lärare att ge snabb, personlig och framåtsyftande feedback till varje elev. Genom att analysera elevtexter mot kunskapskrav och bedömningskriterier genererar verktyget utkast till feedback som läraren sedan granskar och anpassar.',
+    features: [
+      'Analyserar elevtexter mot angivna kunskapskrav',
+      'Genererar framåtsyftande feedback-utkast',
+      'Sparar tid utan att tumma på kvalitet',
+      'Läraren har alltid sista ordet',
+    ],
+    icon: MessageCircle,
+    color: 'bg-emerald-100 text-emerald-700 border-emerald-200',
+    url: 'https://feedbacker-nine.vercel.app/',
   },
 ]
 

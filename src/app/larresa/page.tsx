@@ -83,6 +83,7 @@ const LEARNING_STEPS = [
 export default function LarresaPage() {
   const [levelData, setLevelData] = useState<LevelData | null>(null)
   const [completedSteps, setCompletedSteps] = useState<number[]>([])
+  const [completedItems, setCompletedItems] = useState<Record<string, boolean>>({})
 
   useEffect(() => {
     const saved = localStorage.getItem('oskarsai_level')
@@ -93,12 +94,25 @@ export default function LarresaPage() {
     if (savedSteps) {
       setCompletedSteps(JSON.parse(savedSteps))
     }
+    const savedItems = localStorage.getItem('oskarsai_completed_items')
+    if (savedItems) {
+      setCompletedItems(JSON.parse(savedItems))
+    }
   }, [])
 
   function toggleStep(index: number) {
     setCompletedSteps((prev) => {
       const next = prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
       localStorage.setItem('oskarsai_completed_steps', JSON.stringify(next))
+      return next
+    })
+  }
+
+  function toggleItem(stepIndex: number, itemIndex: number) {
+    const key = `${stepIndex}-${itemIndex}`
+    setCompletedItems((prev) => {
+      const next = { ...prev, [key]: !prev[key] }
+      localStorage.setItem('oskarsai_completed_items', JSON.stringify(next))
       return next
     })
   }
@@ -251,13 +265,29 @@ export default function LarresaPage() {
               </CardHeader>
               <CardContent className="pl-14">
                 <CardDescription className="mb-2">{step.description}</CardDescription>
-                <ul className="space-y-1">
-                  {step.items.map((item, j) => (
-                    <li key={j} className="text-sm text-muted-foreground flex items-start gap-2">
-                      <span className="text-primary/60 mt-1">-</span>
-                      {item}
-                    </li>
-                  ))}
+                <ul className="space-y-1.5">
+                  {step.items.map((item, j) => {
+                    const itemKey = `${i}-${j}`
+                    const isItemDone = completedItems[itemKey]
+                    return (
+                      <li key={j} className="text-sm flex items-start gap-2">
+                        <button
+                          onClick={() => isAccessible && toggleItem(i, j)}
+                          disabled={!isAccessible}
+                          className="mt-0.5 shrink-0"
+                        >
+                          {isItemDone ? (
+                            <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                          ) : (
+                            <Circle className="h-4 w-4 text-muted-foreground/30 hover:text-primary/60 transition-colors" />
+                          )}
+                        </button>
+                        <span className={isItemDone ? 'line-through text-muted-foreground/50' : 'text-muted-foreground'}>
+                          {item}
+                        </span>
+                      </li>
+                    )
+                  })}
                 </ul>
               </CardContent>
             </Card>

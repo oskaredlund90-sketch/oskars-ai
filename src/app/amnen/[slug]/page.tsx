@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { ArrowLeft, BookOpen, MessageSquare, Lightbulb, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, BookOpen, MessageSquare, Lightbulb, ShieldCheck, AlertTriangle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { SUBJECTS } from '@/lib/constants'
+import { SUBJECT_DATA } from '@/lib/subject-data'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -35,6 +36,8 @@ export default async function SubjectPage({ params }: Props) {
     notFound()
   }
 
+  const subjectData = SUBJECT_DATA[slug]
+
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
       {/* Back link */}
@@ -57,6 +60,18 @@ export default async function SubjectPage({ params }: Props) {
         </p>
       </div>
 
+      {/* Curriculum disclaimer */}
+      {subjectData && (
+        <Card className="mb-8 border-amber-200 bg-amber-50/50">
+          <CardContent className="py-4 flex items-start gap-3">
+            <AlertTriangle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-amber-900/80">
+              {subjectData.curriculumDisclaimer}
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Section 1: AI i ämnet */}
       <section className="mb-12">
         <div className="flex items-center gap-3 mb-4">
@@ -68,17 +83,20 @@ export default async function SubjectPage({ params }: Props) {
         <Card className="bg-muted/30">
           <CardContent className="pt-6">
             <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
-              <p>
-                AI erbjuder spännande möjligheter specifikt för {subject.name.toLowerCase()}undervisningen.
-                Från att generera anpassat övningsmaterial till att skapa engagerande aktiviteter
-                &ndash; här utforskar vi hur du kan använda AI som ett komplement till din
-                professionella kompetens.
-              </p>
-              <p>
-                Det viktigaste är att AI:n alltid används som ett verktyg under din ledning.
-                Din ämnesexpertis och din kunskap om elevgruppen är det som gör skillnaden
-                mellan generiskt AI-material och pedagogiskt genomtänkt undervisning.
-              </p>
+              <p>{subjectData?.introduction || `AI erbjuder spännande möjligheter specifikt för ${subject.name.toLowerCase()}undervisningen.`}</p>
+              {subjectData && (
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Så kan AI stödja din undervisning:</h3>
+                  <ul className="space-y-1.5">
+                    {subjectData.aiUseCases.map((useCase, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-primary mt-0.5">&#x2022;</span>
+                        <span>{useCase}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -93,46 +111,19 @@ export default async function SubjectPage({ params }: Props) {
           <h2 className="text-2xl font-bold">Exempelprompts</h2>
         </div>
         <div className="space-y-3">
-          <Card>
-            <CardHeader className="pb-2">
-              <Badge variant="outline" className="w-fit mb-1">Planering</Badge>
-              <CardTitle className="text-base">Lektionsplanering</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="rounded-lg bg-muted p-3 text-sm font-mono">
-                &quot;Skapa en lektionsplan för 60 minuter i {subject.name.toLowerCase()} för
-                årskurs [X]. Temat är [tema]. Inkludera aktiverande start, huvudaktivitet med
-                elevaktivt arbetssätt och en avslutande reflektion. Koppla till centralt innehåll
-                i Lgr22.&quot;
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <Badge variant="outline" className="w-fit mb-1">Bedömning</Badge>
-              <CardTitle className="text-base">Bedömningsstöd</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="rounded-lg bg-muted p-3 text-sm font-mono">
-                &quot;Skapa en bedömningsmatris för en uppgift i {subject.name.toLowerCase()} där
-                eleverna ska [uppgiftsbeskrivning]. Matrisen ska ha tre nivåer (E, C, A) och
-                täcka relevanta kunskapskrav. Ge tydliga, elevvänliga formuleringar.&quot;
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <Badge variant="outline" className="w-fit mb-1">Differentiering</Badge>
-              <CardTitle className="text-base">Anpassat material</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="rounded-lg bg-muted p-3 text-sm font-mono">
-                &quot;Skapa tre versioner av en övning om [ämnesområde] i {subject.name.toLowerCase()}:
-                en grundläggande version med stödfrågor, en standardversion, och en utmanande
-                version med fördjupning. Alla ska behandla samma centrala innehåll.&quot;
-              </div>
-            </CardContent>
-          </Card>
+          {(subjectData?.examplePrompts || []).map((prompt, i) => (
+            <Card key={i}>
+              <CardHeader className="pb-2">
+                <Badge variant="outline" className="w-fit mb-1">{prompt.category}</Badge>
+                <CardTitle className="text-base">{prompt.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="rounded-lg bg-muted p-3 text-sm font-mono">
+                  &quot;{prompt.prompt}&quot;
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
         <p className="mt-4 text-sm text-muted-foreground">
           Fler ämnesspecifika prompts hittar du i{' '}
@@ -149,54 +140,19 @@ export default async function SubjectPage({ params }: Props) {
           <h2 className="text-2xl font-bold">Lektionsidéer</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-base">AI-genererad quiz</CardTitle>
-              <Badge variant="secondary" className="w-fit">15 min</Badge>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm">
-                Använd AI för att snabbt generera quiz-frågor på olika nivåer om aktuellt
-                ämnesområde. Låt eleverna diskutera svaren i par innan ni går igenom tillsammans.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-base">Faktagranskning</CardTitle>
-              <Badge variant="secondary" className="w-fit">20 min</Badge>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm">
-                Be AI:n skriva en text om ämnet med inlagda fel. Eleverna granskar texten och
-                hittar felen &ndash; tränar både ämneskunskap och källkritiskt tänkande.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-base">Begreppsförklaring</CardTitle>
-              <Badge variant="secondary" className="w-fit">10 min</Badge>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm">
-                Eleverna förklarar ett begrepp för AI:n och ber den bedöma om förklaringen
-                är korrekt. Bra övning för att fördjupa begreppsförståelsen.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-base">Debatt med AI-stöd</CardTitle>
-              <Badge variant="secondary" className="w-fit">30 min</Badge>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm">
-                Låt AI generera argument för båda sidor i en ämnesrelevant fråga. Eleverna
-                granskar, kompletterar och debatterar med stöd av sina egna kunskaper.
-              </CardDescription>
-            </CardContent>
-          </Card>
+          {(subjectData?.lessonIdeas || []).map((idea, i) => (
+            <Card key={i}>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base">{idea.title}</CardTitle>
+                <Badge variant="secondary" className="w-fit">{idea.duration}</Badge>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm">
+                  {idea.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
         </div>
         <p className="mt-4 text-sm text-muted-foreground">
           Har du en egen aktivitetsidé som fungerat bra? Dela gärna med dig via{' '}
@@ -217,37 +173,15 @@ export default async function SubjectPage({ params }: Props) {
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Att säkerställa valid bedömning när AI finns tillgängligt är en viktig fråga
-                inom {subject.name.toLowerCase()}. Här är några grundprinciper:
+                inom {subject.name.toLowerCase()}. Här är specifika tips:
               </p>
               <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">&#x2022;</span>
-                  <span>
-                    <strong>Variera bedömningsformer:</strong> Kombinera skriftliga uppgifter med
-                    muntliga presentationer, praktiska moment och processbedömning.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">&#x2022;</span>
-                  <span>
-                    <strong>Bedöm processen:</strong> Låt eleverna visa sin tankeprocess genom
-                    loggbok, utkast eller reflektioner om hur de arbetat.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">&#x2022;</span>
-                  <span>
-                    <strong>Transparens:</strong> Var tydlig med när AI får och inte får användas.
-                    Skapa ett klassrumskontrakt.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">&#x2022;</span>
-                  <span>
-                    <strong>Autentiska uppgifter:</strong> Designa uppgifter som kräver personliga
-                    erfarenheter, lokala kopplingar eller unik kontext som AI inte kan generera.
-                  </span>
-                </li>
+                {(subjectData?.validityTips || []).map((tip, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">&#x2022;</span>
+                    <span>{tip}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </CardContent>

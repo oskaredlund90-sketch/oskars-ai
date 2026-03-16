@@ -23,7 +23,9 @@ export function Footer() {
               <li><Link href="/nivatest" className="hover:text-foreground transition-colors">Nivåtest</Link></li>
               <li><Link href="/larresa" className="hover:text-foreground transition-colors">Din lärresa</Link></li>
               <li><Link href="/grunder" className="hover:text-foreground transition-colors">AI-grunder</Link></li>
+              <li><Link href="/ai-verktyg" className="hover:text-foreground transition-colors">AI-verktyg</Link></li>
               <li><Link href="/promptteknik" className="hover:text-foreground transition-colors">Promptteknik</Link></li>
+              <li><Link href="/avancerat" className="hover:text-foreground transition-colors">Avancerat</Link></li>
             </ul>
           </div>
 
@@ -32,8 +34,9 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/amnen" className="hover:text-foreground transition-colors">Ämnesguider</Link></li>
               <li><Link href="/promptbibliotek" className="hover:text-foreground transition-colors">Promptbibliotek</Link></li>
-              <li><Link href="/validitet" className="hover:text-foreground transition-colors">Validitet</Link></li>
               <li><Link href="/studieteknik" className="hover:text-foreground transition-colors">Studieteknik</Link></li>
+              <li><Link href="/validitet" className="hover:text-foreground transition-colors">Validitet</Link></li>
+              <li><Link href="/fortbildning" className="hover:text-foreground transition-colors">Fortbildning</Link></li>
             </ul>
           </div>
 
@@ -41,6 +44,7 @@ export function Footer() {
             <h3 className="font-semibold text-sm mb-3">Övrigt</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/projekt" className="hover:text-foreground transition-colors">Mina projekt</Link></li>
+              <li><Link href="/presentation" className="hover:text-foreground transition-colors">Presentation (60 min)</Link></li>
               <li><Link href="/om" className="hover:text-foreground transition-colors">Om Oskars AI</Link></li>
             </ul>
           </div>
