@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { SITE_NAME } from '@/lib/constants'
 
 export function Footer() {
@@ -8,9 +7,8 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="sm:col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-3 font-bold text-lg mb-3">
-              <Image src="/logo.png" alt={SITE_NAME} width={36} height={36} className="h-9 w-9" />
-              {SITE_NAME}
+            <Link href="/" className="flex items-center gap-2 font-bold text-lg mb-3 hover:opacity-80 transition-opacity">
+              OSKARS <span className="text-primary">AI</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               En lärandeplattform för lärare som vill integrera AI i sin undervisning - steg för steg.

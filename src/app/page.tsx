@@ -53,14 +53,15 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/[0.03] rounded-full blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-12 pb-20 md:pt-16 md:pb-28">
-          <div className="flex flex-col items-center text-center mb-10">
+          <div className="flex flex-col items-center text-center mb-6">
             <Image
               src="/logo.png"
               alt="Oskars AI"
               width={600}
               height={180}
-              className="w-64 sm:w-80 md:w-96 h-auto mb-6"
+              className="w-64 sm:w-80 md:w-96 h-auto mb-3"
               priority
             />
             <Badge variant="secondary" className="text-sm font-medium px-3 py-1">
@@ -78,7 +79,7 @@ export default function HomePage() {
               konkreta verktyg, ett kritiskt förhållningssätt och en personlig lärresa anpassad efter din nivå.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild size="lg" className="text-base px-6">
+              <Button asChild size="lg" className="text-base px-6 shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/30">
                 <Link href="/nivatest">
                   Testa din nivå
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -107,7 +108,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {LEVELS.map((level) => (
-              <Card key={level.id} className="relative overflow-hidden hover:shadow-md transition-shadow">
+              <Card key={level.id} className="relative overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-2 mb-1">
                     <Badge variant="outline" className={level.color}>
@@ -146,9 +147,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {FEATURES.map((feature) => (
-              <Card key={feature.title} className="hover:shadow-md transition-shadow">
+              <Card key={feature.title} className="hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                 <CardHeader>
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-2">
+                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-2 transition-colors group-hover/card:bg-primary/20">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
                   <CardTitle className="text-xl">{feature.title}</CardTitle>
@@ -177,7 +178,7 @@ export default function HomePage() {
               <Link key={subject.slug} href={`/amnen/${subject.slug}`}>
                 <Badge
                   variant="outline"
-                  className="text-base px-4 py-2 hover:bg-primary/5 hover:border-primary/30 transition-colors cursor-pointer"
+                  className="text-base px-4 py-2 hover:bg-primary/5 hover:border-primary/30 hover:scale-105 transition-all duration-200 cursor-pointer"
                 >
                   <span className="mr-2">{subject.icon}</span>
                   {subject.name}
@@ -192,7 +193,7 @@ export default function HomePage() {
       <section className="py-16 md:py-20 bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="border-violet-200 bg-violet-50/30 hover:shadow-md transition-shadow">
+            <Card className="border-violet-200 bg-violet-50/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
               <CardHeader>
                 <div className="h-10 w-10 rounded-lg bg-violet-100 flex items-center justify-center mb-2">
                   <GraduationCap className="h-5 w-5 text-violet-700" />
@@ -212,7 +213,7 @@ export default function HomePage() {
                 </Button>
               </CardContent>
             </Card>
-            <Card className="border-amber-200 bg-amber-50/30 hover:shadow-md transition-shadow">
+            <Card className="border-amber-200 bg-amber-50/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
               <CardHeader>
                 <div className="h-10 w-10 rounded-lg bg-amber-100 flex items-center justify-center mb-2">
                   <Target className="h-5 w-5 text-amber-700" />
@@ -248,7 +249,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PROJECTS.map((project) => (
-              <Card key={project.name} className="hover:shadow-md transition-shadow">
+              <Card key={project.name} className="hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                 <CardHeader>
                   <CardTitle className="text-xl flex items-center gap-2">
                     {project.name}
